@@ -1,15 +1,8 @@
 import math
-s1,s2=input().split() 
-s1=int(s1)
-s2=int(s2) 
-s3=list(map(int,input().split())) 
-x1,y1=input().split()
-x1=int(x1)  
-y1=int(y1)    
-x2,y2=input().split()
-x2=int(x2)  
-y2=int(y2)
-print(end="")  
-print(math.gcd(x1,y1))
-print(end="")  
-print(math.gcd(x2,y2))
+import functools
+inp11,inp21=map(int,input().split())
+List=[int(i) for i in input().split()]
+for i in range(inp21):
+    c,d=map(int,input().split())
+    temp=functools.reduce(math.gcd,List[c-1:d])
+    print(temp)
